@@ -24,6 +24,7 @@
 #include "kvs_common.hpp"
 #include "lattices/lww_pair_lattice.hpp"
 #include "yaml-cpp/yaml.h"
+#include "metadata.hpp"
 
 // Define the garbage collect threshold
 #define GARBAGE_COLLECT_THRESHOLD 10000000
@@ -42,13 +43,14 @@ typedef KVStore<Key, SingleKeyCausalLattice<SetLattice<string>>>
 typedef KVStore<Key, MultiKeyCausalLattice<SetLattice<string>>>
     MemoryMultiKeyCausalKVS;
 typedef KVStore<Key, PriorityLattice<double, string>> MemoryPriorityKVS;
+typedef KVStore<Key, TopKPriorityLattice<double, string, kNumShortestPaths>> MemoryTopKPriorityKVS;
 
 // a map that represents which keys should be sent to which IP-port combinations
 typedef map<Address, set<Key>> AddressKeysetMap;
 
 class Serializer {
 public:
-  virtual string get(const Key &key, AnnaError &error) = 0;
+  virtual string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") = 0;
   virtual unsigned put(const Key &key, const string &serialized) = 0;
   virtual void remove(const Key &key) = 0;
   virtual ~Serializer(){};
@@ -60,14 +62,22 @@ class MemoryLWWSerializer : public Serializer {
 public:
   MemoryLWWSerializer(MemoryLWWKVS *kvs) : kvs_(kvs) {}
 
-  string get(const Key &key, AnnaError &error) {
+  string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
+
     auto val = kvs_->get(key, error);
 
     if (val.reveal().value == "") {
       error = AnnaError::KEY_DNE;
     }
 
-    return serialize(val);
+    if (!delta) {
+      return serialize(val);
+    } else {
+      if (val.reveal().timestamp != deserialize_lww(previous_payload).reveal().timestamp) {
+        return serialize(val);
+      } else {
+        return kDeltaRequestIdentical;
+      }
   }
 
   unsigned put(const Key &key, const string &serialized) {
@@ -85,12 +95,22 @@ class MemorySetSerializer : public Serializer {
 public:
   MemorySetSerializer(MemorySetKVS *kvs) : kvs_(kvs) {}
 
-  string get(const Key &key, AnnaError &error) {
+    string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
     auto val = kvs_->get(key, error);
     if (val.size().reveal() == 0) {
       error = AnnaError::KEY_DNE;
     }
-    return serialize(val);
+    if (!delta) {
+      return serialize(val);
+    } else {
+      SetLattice<string> deserialized_payload = deserialize_set(previous_payload);
+
+       if (val.reveal() != deserialized_payload.reveal()) {
+        return serialize(val);
+      } else {
+        return kDeltaRequestIdentical;
+      }
+    }
   }
 
   unsigned put(const Key &key, const string &serialized) {
@@ -108,7 +128,8 @@ class MemoryOrderedSetSerializer : public Serializer {
 public:
   MemoryOrderedSetSerializer(MemoryOrderedSetKVS *kvs) : kvs_(kvs) {}
 
-  string get(const Key &key, AnnaError &error) {
+  string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
+
     auto val = kvs_->get(key, error);
     return serialize(val);
   }
@@ -128,7 +149,8 @@ class MemorySingleKeyCausalSerializer : public Serializer {
 public:
   MemorySingleKeyCausalSerializer(MemorySingleKeyCausalKVS *kvs) : kvs_(kvs) {}
 
-  string get(const Key &key, AnnaError &error) {
+  string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
+
     auto val = kvs_->get(key, error);
     if (val.reveal().value.size().reveal() == 0) {
       error = AnnaError::KEY_DNE;
@@ -153,7 +175,7 @@ class MemoryMultiKeyCausalSerializer : public Serializer {
 public:
   MemoryMultiKeyCausalSerializer(MemoryMultiKeyCausalKVS *kvs) : kvs_(kvs) {}
 
-  string get(const Key &key, AnnaError &error) {
+  string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
     auto val = kvs_->get(key, error);
     if (val.reveal().value.size().reveal() == 0) {
       error = AnnaError::KEY_DNE;
@@ -179,8 +201,8 @@ class MemoryPrioritySerializer : public Serializer {
 public:
   MemoryPrioritySerializer(MemoryPriorityKVS *kvs) : kvs_(kvs) {}
 
-  string get(const Key &key, AnnaError &error) {
-    auto val = kvs_->get(key, error);
+  string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
+   auto val = kvs_->get(key, error);
     if (val.reveal().value == "") {
       error = AnnaError::KEY_DNE;
     }
@@ -195,6 +217,31 @@ public:
 
   void remove(const Key &key) { kvs_->remove(key); }
 };
+
+class MemoryTopKPrioritySerializer : public Serializer {
+  MemoryTopKPriorityKVS *kvs_;
+
+public:
+  MemoryTopKPrioritySerializer(MemoryTopKPriorityKVS *kvs) : kvs_(kvs) {}
+
+  string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
+    auto val = kvs_->get(key, error);
+    if (val.reveal().size() == 0) {
+      error = AnnaError::KEY_DNE;
+    }
+    return serialize(val);
+  }
+
+  unsigned put(const Key &key, const string &serialized) {
+    TopKPriorityLattice<double, string, kNumShortestPaths> val = deserialize_top_k_priority(serialized);
+    kvs_->put(key, val);
+    return kvs_->size(key);
+  }
+
+  void remove(const Key &key) { kvs_->remove(key); }
+};
+
+
 
 class DiskLWWSerializer : public Serializer {
   unsigned tid_;
@@ -211,7 +258,7 @@ public:
     }
   }
 
-  string get(const Key &key, AnnaError &error) {
+  string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
     string res;
     LWWValue value;
 
@@ -296,8 +343,8 @@ public:
     }
   }
 
-  string get(const Key &key, AnnaError &error) {
-    string res;
+    string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
+ string res;
     SetValue value;
 
     // open a new filestream for reading in a binary
@@ -392,7 +439,7 @@ public:
     }
   }
 
-  string get(const Key &key, AnnaError &error) {
+  string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
     string res;
     SetValue value;
 
@@ -484,7 +531,7 @@ public:
     }
   }
 
-  string get(const Key &key, AnnaError &error) {
+  string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
     string res;
     SingleKeyCausalValue value;
 
@@ -601,8 +648,8 @@ public:
     }
   }
 
-  string get(const Key &key, AnnaError &error) {
-    string res;
+   string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") {
+  string res;
     MultiKeyCausalValue value;
 
     // open a new filestream for reading in a binary
@@ -754,8 +801,8 @@ public:
       ebs_root_ += "/";
   }
 
-  string get(const Key &key, AnnaError &error) override {
-    string res;
+    string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") override {
+  string res;
     PriorityValue value;
 
     std::fstream input(fname(key), std::ios::in | std::ios::binary);
@@ -785,7 +832,7 @@ public:
 
     PriorityValue original_value;
     if (!original_value.ParseFromFileDescriptor(fd) ||
-        input_value.priority() < original_value.priority()) {
+        input_value.priority() > original_value.priority()) {
       // resize the file to 0
       ftruncate(fd, 0);
       // ftruncate does not change the fd's file offset, so we set it to 0
@@ -808,6 +855,107 @@ public:
     }
   }
 };
+
+class DiskTopKPrioritySerializer : public Serializer {
+  unsigned tid_;
+  string ebs_root_;
+
+  //! Compute the name of the file that stores a value for a given key
+  string fname(const Key &key) const {
+    return ebs_root_ + "ebs_" + std::to_string(tid_) + "/" + key;
+  }
+
+public:
+  DiskTopKPrioritySerializer(unsigned tid) : tid_(tid) {
+    YAML::Node conf = YAML::LoadFile("conf/anna-config.yml");
+
+    ebs_root_ = conf["ebs"].as<string>();
+
+    if (ebs_root_.back() != '/')
+      ebs_root_ += "/";
+  }
+
+  string get(const Key &key, AnnaError &error, bool delta = false, const string &previous_payload = "") override {
+    string res;
+    PriorityValue value;
+
+    std::fstream input(fname(key), std::ios::in | std::ios::binary);
+
+    if (!input) {
+      error = AnnaError::KEY_DNE;
+    } else if (!value.ParseFromIstream(&input)) {
+      std::cerr << "Failed to parse payload." << std::endl;
+      error = AnnaError::KEY_DNE;
+    } else if (value.value() == "") {
+      error = AnnaError::KEY_DNE;
+    } else {
+      value.SerializeToString(&res);
+    }
+    return res;
+  }
+
+  unsigned put(const Key &key, const string &serialized) override {
+    TopKPriorityValue top_k_input_value;
+    top_k_input_value.ParseFromString(serialized);
+
+    int fd = open(fname(key).c_str(), O_RDWR | O_CREAT);
+    if (fd == -1) {
+      std::cerr << "Failed to open file" << std::endl;
+      return 0;
+    }
+
+    TopKPriorityValue top_k_original_value;
+    if (!top_k_original_value.ParseFromFileDescriptor(fd)) {
+      // resize the file to 0
+      ftruncate(fd, 0);
+      // ftruncate does not change the fd's file offset, so we set it to 0
+      lseek(fd, 0, SEEK_SET);
+      if (!top_k_original_value.SerializeToFileDescriptor(fd))
+        std::cerr << "Failed to write payload" << std::endl;
+    } else {
+
+      std::set<PriorityValuePair<double, string>> result;
+      for (const auto& pv : top_k_input_value.values()) {
+        result.insert(std::move(PriorityValuePair<double, string>(std::move(pv.priority()), std::move(pv.value()))));
+      }
+      for (const auto& pv : top_k_original_value.values()) {
+        result.insert(std::move(PriorityValuePair<double, string>(std::move(pv.priority()), std::move(pv.value()))));
+      }
+
+      TopKPriorityLattice<double, string, kNumShortestPaths> topKPriorityLattice = TopKPriorityLattice<double, string, kNumShortestPaths>(result);
+
+      TopKPriorityValue top_k_priority_value;
+
+      for (const auto& p : topKPriorityLattice.reveal()) {
+        PriorityValue* pv = top_k_priority_value.add_values();
+        pv->set_priority(p.priority);
+        pv->set_value(p.value);
+      }
+
+      // resize the file to 0
+      ftruncate(fd, 0);
+      // ftruncate does not change the fd's file offset, so we set it to 0
+      lseek(fd, 0, SEEK_SET);
+      if (!top_k_priority_value.SerializeToFileDescriptor(fd))
+        std::cerr << "Failed to write payload" << std::endl;
+
+    }
+
+    unsigned pos = lseek(fd, 0, SEEK_CUR);
+
+    if (close(fd) == -1)
+      std::cerr << "Problem closing file" << std::endl;
+
+    return pos;
+  }
+
+  void remove(const Key &key) override {
+    if (std::remove(fname(key).c_str()) != 0) {
+      std::cerr << "Error deleting file" << std::endl;
+    }
+  }
+};
+
 
 using SerializerMap =
     std::unordered_map<LatticeType, Serializer *, lattice_type_hash>;

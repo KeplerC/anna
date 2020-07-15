@@ -14,9 +14,9 @@
 
 from anna.anna_pb2 import (
     # Protobuf enum lattices types
-    LWW, SET, ORDERED_SET, SINGLE_CAUSAL, MULTI_CAUSAL, PRIORITY,
+    LWW, SET, ORDERED_SET, SINGLE_CAUSAL, MULTI_CAUSAL, PRIORITY,TOPK_PRIORITY,
     # Serialized lattice protobuf representations
-    LWWValue, SetValue, SingleKeyCausalValue, MultiKeyCausalValue, PriorityValue,
+    LWWValue, SetValue, SingleKeyCausalValue, MultiKeyCausalValue, PriorityValue,TopKPriorityValue,
     KeyRequest
 )
 from anna.causal_pb2 import CausalTuple
@@ -30,9 +30,11 @@ from anna.lattices import (
     PriorityLattice,
     SetLattice,
     SingleKeyCausalLattice,
+    TopKPriorityValue,
     VectorClock
 )
 
+from sortedcontainers import SortedDict
 
 class BaseAnnaClient():
     def __init__(self):
@@ -197,6 +199,16 @@ class BaseAnnaClient():
             val.ParseFromString(tup.payload)
 
             return PriorityLattice(val.priority, val.value)
+
+        elif tup.lattice_type == TOPK_PRIORITY:
+            val = TopKPriorityValue()
+            val.ParseFromString(tup.payload)
+
+            ordered_dict = SortedDict()
+            for v in val.values:
+                ordered_dict[v.priority] = v.value
+            return TopKPriorityLattice(len(ordered_dict), ordered_dict)    
+
         else:
             raise ValueError('Unsupported type cannot be serialized: ' +
                              str(tup.lattice_type))
@@ -227,6 +239,30 @@ class BaseAnnaClient():
             tup = req.tuples.add()
             tuples.append(tup)
             tup.key = key
+
+            if self.address_cache and key in self.address_cache:
+                tup.address_cache_size = len(self.address_cache[key])
+
+        return (req, tuples)
+
+    # Helper function to create a KeyRequest (see
+    # hydro-project/common/proto/anna.proto). Takes in a key name and returns a
+    # tuple containing a KeyRequest and a KeyTuple contained in that KeyRequest
+    # with response_address, request_id, and address_cache_size automatically
+    # populated.
+    def _prepare_delta_data_request(self, keys, serialized_previous):
+        req = KeyRequest()
+        req.request_id = self._get_request_id()
+        req.response_address = self.response_address
+
+        tuples = []
+
+        for key in keys:
+            tup = req.tuples.add()
+            tuples.append(tup)
+            tup.key = key
+            tup.previous_payload = serialized_previous
+            tup.delta = True
 
             if self.address_cache and key in self.address_cache:
                 tup.address_cache_size = len(self.address_cache[key])

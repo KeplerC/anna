@@ -195,6 +195,7 @@ void run(unsigned thread_id, Address public_ip, Address private_ip,
   Serializer *sk_causal_serializer;
   Serializer *mk_causal_serializer;
   Serializer *priority_serializer;
+  Serializer *top_k_priority_serializer;
 
   if (kSelfTier == Tier::MEMORY) {
     MemoryLWWKVS *lww_kvs = new MemoryLWWKVS();
@@ -216,6 +217,25 @@ void run(unsigned thread_id, Address public_ip, Address private_ip,
 
     MemoryPriorityKVS *priority_kvs = new MemoryPriorityKVS();
     priority_serializer = new MemoryPrioritySerializer(priority_kvs);
+
+    MemoryTopKPriorityKVS *top_k_priority_kvs = new MemoryTopKPriorityKVS();
+    top_k_priority_serializer = new MemoryTopKPrioritySerializer(top_k_priority_kvs);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   } else if (kSelfTier == Tier::DISK) {
     lww_serializer = new DiskLWWSerializer(thread_id);
     set_serializer = new DiskSetSerializer(thread_id);
@@ -223,6 +243,7 @@ void run(unsigned thread_id, Address public_ip, Address private_ip,
     sk_causal_serializer = new DiskSingleKeyCausalSerializer(thread_id);
     mk_causal_serializer = new DiskMultiKeyCausalSerializer(thread_id);
     priority_serializer = new DiskPrioritySerializer(thread_id);
+     top_k_priority_serializer = new DiskTopKPrioritySerializer(thread_id);
   } else {
     log->info("Invalid node type");
     exit(1);
@@ -234,6 +255,7 @@ void run(unsigned thread_id, Address public_ip, Address private_ip,
   serializers[LatticeType::SINGLE_CAUSAL] = sk_causal_serializer;
   serializers[LatticeType::MULTI_CAUSAL] = mk_causal_serializer;
   serializers[LatticeType::PRIORITY] = priority_serializer;
+  serializers[LatticeType::TOPK_PRIORITY] = top_k_priority_serializer;
 
   // the set of changes made on this thread since the last round of gossip
   set<Key> local_changeset;
@@ -437,9 +459,9 @@ void run(unsigned thread_id, Address public_ip, Address private_ip,
 
       string serialized =
           kZmqUtil->recv_string(&management_node_response_puller);
-      management_node_response_handler(
-          serialized, extant_caches, cache_ip_to_keys, key_to_cache_ips,
-          global_hash_rings, local_hash_rings, pushers, wt, rid);
+      // management_node_response_handler(
+      //     serialized, extant_caches, cache_ip_to_keys, key_to_cache_ips,
+      //     global_hash_rings, local_hash_rings, pushers, wt, rid);
 
       auto time_elapsed = std::chrono::duration_cast<std::chrono::microseconds>(
                               std::chrono::system_clock::now() - work_start)
@@ -708,10 +730,15 @@ void run(unsigned thread_id, Address public_ip, Address private_ip,
 }
 
 int main(int argc, char *argv[]) {
+  string log_file = "log_master.txt";
+  string log_name = "server_log_master";
+  auto log = spdlog::basic_logger_mt(log_name, log_file, true);
+  log->flush_on(spdlog::level::info);
   if (argc != 1) {
     std::cerr << "Usage: " << argv[0] << std::endl;
     return 1;
   }
+  log->info("reached here");
 
   // populate metadata
   char *stype = getenv("SERVER_TYPE");

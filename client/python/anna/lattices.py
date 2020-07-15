@@ -14,10 +14,12 @@
 
 from anna.anna_pb2 import (
     # Anna's lattice types as an enum
-    LWW, SET, ORDERED_SET, SINGLE_CAUSAL, MULTI_CAUSAL, PRIORITY,
+    LWW, SET, ORDERED_SET, SINGLE_CAUSAL, MULTI_CAUSAL, PRIORITY, TOPK_PRIORITY,
     # Serialized representations of Anna's lattices
-    LWWValue, SetValue, SingleKeyCausalValue, MultiKeyCausalValue, PriorityValue
+    LWWValue, SetValue, SingleKeyCausalValue, MultiKeyCausalValue, PriorityValue, TopKPriorityValue
 )
+
+from sortedcontainers import SortedDict
 
 
 class Lattice:
@@ -507,3 +509,47 @@ class PriorityLattice(Lattice):
         res.value = self.value
         
         return res, PRIORITY
+
+class TopKPriorityLattice(Lattice):
+    def __init__(self, k, k_v=None):
+        if type(k) != int or k < 0 or not isinstance(k_v, dict):
+            raise ValueError('TopKPriorityLattice must be a priority queue with a positive integer capacity k.')
+
+        self.k = k
+        if k_v:
+            self.payload = SortedDict(k_v.items()) 
+        else:
+            self.payload = SortedDict()
+
+        while len(self.payload) > self.k:
+            del self.payload[self.payload.keys()[-1]]
+
+    def reveal(self):
+        return self.payload
+
+    def assign(self, payload):
+        if type(payload) != list:
+            raise ValueError('TopKPriorityLattice must be assigned by a list.')
+
+        for pair in self.payload.items():
+            if type(pair) != tuple or type(pair[0]) != float or type(pair[1]) != bytes:
+                raise ValueError('Each pair in TopKPriorityLattice must be a float-bytes pair.')
+            self.payload[pair[0]] = pair[1]
+
+    def merge(self, other):
+        if type(other) != PriorityLattice:
+            raise ValueError('Values merged to TopKPriorityLattice must be a PriorityLattice.')
+
+        self.payload[other.priority] = other.payload
+
+        if len(self.payload.items()) > self.k:
+            del self.payload[self.payload.keys()[-1]]
+
+        return self.payload
+
+    def serialize(self):
+        res = TopKPriorityValue()
+        for pair in self.payload.items():
+            res.payload.add(pair)
+
+        return res, TOPK_PRIORITY

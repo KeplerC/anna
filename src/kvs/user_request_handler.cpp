@@ -13,7 +13,7 @@
 //  limitations under the License.
 
 #include "kvs/kvs_handlers.hpp"
-
+#include "metadata.hpp"
 void user_request_handler(
     unsigned &access_count, unsigned &seed, string &serialized, logger log,
     GlobalRingMap &global_hash_rings, LocalRingMap &local_hash_rings,
@@ -39,6 +39,8 @@ void user_request_handler(
     // first check if the thread is responsible for the key
     Key key = tuple.key();
     string payload = tuple.payload();
+    bool delta = tuple.delta();
+    const string previous_payload = tuple.previous_payload();
 
     ServerThreadList threads = kHashRingUtil->get_responsible_threads(
         wt.replication_response_connect_address(), key, is_metadata(key),
@@ -76,9 +78,24 @@ void user_request_handler(
 
             tp->set_error(AnnaError::KEY_DNE);
           } else {
-            auto res = process_get(key, serializers[stored_key_map[key].type_]);
+            //auto res = process_get(key, serializers[stored_key_map[key].type_]);
+            log->info("key name is {}", key);
+            auto res = process_get(key, serializers[stored_key_map[key].type_], delta, previous_payload);
             tp->set_lattice_type(stored_key_map[key].type_);
-            tp->set_payload(res.first);
+            //tp->set_payload(res.first);
+            auto type = stored_key_map[key].type_;
+            if (res.first == kDeltaRequestIdentical) {
+              tp->set_identical(true);
+
+            } else {
+              tp->set_payload(res.first);
+              if (type == LatticeType::TOPK_PRIORITY) {
+                log->info("length = {}",  deserialize_top_k_priority(res.first).reveal().size());
+              } else {
+                log->info("not a topk lattice");
+              }
+
+            }
             tp->set_error(res.second);
           }
         } else if (request_type == RequestType::PUT) {
