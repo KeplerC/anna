@@ -30,7 +30,7 @@ from anna.lattices import (
     PriorityLattice,
     SetLattice,
     SingleKeyCausalLattice,
-    TopKPriorityValue,
+    TopKPriorityLattice,
     VectorClock
 )
 
