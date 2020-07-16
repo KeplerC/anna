@@ -824,7 +824,7 @@ public:
     PriorityValue input_value;
     input_value.ParseFromString(serialized);
 
-    int fd = open(fname(key).c_str(), O_RDWR | O_CREAT);
+    int fd = open(fname(key).c_str(), O_RDWR | O_CREAT, 0755);
     if (fd == -1) {
       std::cerr << "Failed to open file" << std::endl;
       return 0;
@@ -898,7 +898,7 @@ public:
     TopKPriorityValue top_k_input_value;
     top_k_input_value.ParseFromString(serialized);
 
-    int fd = open(fname(key).c_str(), O_RDWR | O_CREAT);
+    int fd = open(fname(key).c_str(), O_RDWR | O_CREAT, 0755);
     if (fd == -1) {
       std::cerr << "Failed to open file" << std::endl;
       return 0;
