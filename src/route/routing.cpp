@@ -164,6 +164,7 @@ void run(unsigned thread_id, Address ip, vector<Address> monitoring_ips) {
     if (pollitems[4].revents & ZMQ_POLLIN) {
       std::cout << "b15k";
       string serialized = kZmqUtil->recv_string(&key_address_puller);
+      std::cout << "middle " << serialized << " middle";
       address_handler(log, serialized, pushers, rt, global_hash_rings,
                       local_hash_rings, key_replication_map, pending_requests,
                       seed);
