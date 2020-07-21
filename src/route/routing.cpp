@@ -34,6 +34,7 @@ void run(unsigned thread_id, Address ip, vector<Address> monitoring_ips) {
   auto log = spdlog::basic_logger_mt(log_name, log_file, true);
   log->flush_on(spdlog::level::info);
 
+  std::cout << "before before set";
   RoutingThread rt = RoutingThread(ip, thread_id);
 
   unsigned seed = time(NULL);
@@ -41,8 +42,10 @@ void run(unsigned thread_id, Address ip, vector<Address> monitoring_ips) {
 
   // prepare the zmq context
   zmq::context_t context(1);
+  std::cout << "before set";
   auto res = context.setctxopt(ZMQ_MAX_SOCKETS, 10000);
   //auto res = zmq_ctx_set(ctx_ptr, ZMQ_MAX_SOCKETS, 10000);
+  std::cout << "start to set";
   if (res == 0) {
     std::cout << "successfully set\n";
   } else {
@@ -56,11 +59,14 @@ void run(unsigned thread_id, Address ip, vector<Address> monitoring_ips) {
 
   if (thread_id == 0) {
     // notify monitoring nodes
+    std::cout << "enter if";
     for (const string &address : monitoring_ips) {
+      std::cout << "before send string";
       kZmqUtil->send_string(
           // add null because it expects two IPs from server nodes...
           "join:" + Tier_Name(Tier::ROUTING) + ":" + ip + ":NULL",
           &pushers[MonitoringThread(address).notify_connect_address()]);
+      std::cout << "after send string";
     }
   }
 
@@ -79,28 +85,34 @@ void run(unsigned thread_id, Address ip, vector<Address> monitoring_ips) {
     }
   }
 
+  std::cout << "1";
   // responsible for sending existing server addresses to a new node (relevant
   // to seed node)
   zmq::socket_t addr_responder(context, ZMQ_REP);
   addr_responder.bind(rt.seed_bind_address());
 
+  std::cout << "2";
   // responsible for both node join and departure
   zmq::socket_t notify_puller(context, ZMQ_PULL);
   notify_puller.bind(rt.notify_bind_address());
 
+  std::cout << "3";
   // responsible for listening for key replication factor response
   zmq::socket_t replication_response_puller(context, ZMQ_PULL);
   replication_response_puller.bind(rt.replication_response_bind_address());
 
+  std::cout << "4";
   // responsible for handling key replication factor change requests from server
   // nodes
   zmq::socket_t replication_change_puller(context, ZMQ_PULL);
   replication_change_puller.bind(rt.replication_change_bind_address());
 
+  std::cout << "5";
   // responsible for handling key address request from users
   zmq::socket_t key_address_puller(context, ZMQ_PULL);
   key_address_puller.bind(rt.key_address_bind_address());
 
+  std::cout << "6";
   vector<zmq::pollitem_t> pollitems = {
       {static_cast<void *>(addr_responder), 0, ZMQ_POLLIN, 0},
       {static_cast<void *>(notify_puller), 0, ZMQ_POLLIN, 0},
@@ -109,13 +121,16 @@ void run(unsigned thread_id, Address ip, vector<Address> monitoring_ips) {
       {static_cast<void *>(key_address_puller), 0, ZMQ_POLLIN, 0}};
 
   while (true) {
+      std::cout << "before poll";
     kZmqUtil->poll(-1, &pollitems);
 
+  std::cout << "after poll";
     // only relavant for the seed node
     if (pollitems[0].revents & ZMQ_POLLIN) {
       kZmqUtil->recv_string(&addr_responder);
       auto serialized = seed_handler(log, global_hash_rings);
       kZmqUtil->send_string(serialized, &addr_responder);
+        std::cout << "11";
     }
 
     // handle a join or depart event coming from the server side
@@ -123,6 +138,7 @@ void run(unsigned thread_id, Address ip, vector<Address> monitoring_ips) {
       string serialized = kZmqUtil->recv_string(&notify_puller);
       membership_handler(log, serialized, pushers, global_hash_rings, thread_id,
                          ip);
+                           std::cout << "12";
     }
 
     // received replication factor response
@@ -131,12 +147,14 @@ void run(unsigned thread_id, Address ip, vector<Address> monitoring_ips) {
       replication_response_handler(log, serialized, pushers, rt,
                                    global_hash_rings, local_hash_rings,
                                    key_replication_map, pending_requests, seed);
+                                     std::cout << "13";
     }
 
     if (pollitems[3].revents & ZMQ_POLLIN) {
       string serialized = kZmqUtil->recv_string(&replication_change_puller);
       replication_change_handler(log, serialized, pushers, key_replication_map,
                                  thread_id, ip);
+                                   std::cout << "14";
     }
 
     if (pollitems[4].revents & ZMQ_POLLIN) {
@@ -144,6 +162,7 @@ void run(unsigned thread_id, Address ip, vector<Address> monitoring_ips) {
       address_handler(log, serialized, pushers, rt, global_hash_rings,
                       local_hash_rings, key_replication_map, pending_requests,
                       seed);
+                        std::cout << "15";
     }
   }
 }
@@ -154,6 +173,7 @@ int main(int argc, char *argv[]) {
     return 1;
   }
 
+  std::cout << "run to routing";
   YAML::Node conf = YAML::LoadFile("conf/anna-config.yml");
   YAML::Node threads = conf["threads"];
   unsigned kMemoryThreadCount = threads["memory"].as<unsigned>();
@@ -188,10 +208,12 @@ int main(int argc, char *argv[]) {
 
   vector<std::thread> routing_worker_threads;
 
+  std::cout << " push back routing threads";
   for (unsigned thread_id = 1; thread_id < kRoutingThreadCount; thread_id++) {
     routing_worker_threads.push_back(
         std::thread(run, thread_id, ip, monitoring_ips));
   }
 
+  std::cout << " begin to run";
   run(0, ip, monitoring_ips);
 }
