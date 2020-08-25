@@ -1,0 +1,13 @@
+# Target labels
+ zeromqcpp
+# Source files and their labels
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/CMakeFiles/zeromqcpp
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/CMakeFiles/zeromqcpp.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/CMakeFiles/zeromqcpp-complete.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-install.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-mkdir.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-download.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-update.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-patch.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-configure.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-build.rule

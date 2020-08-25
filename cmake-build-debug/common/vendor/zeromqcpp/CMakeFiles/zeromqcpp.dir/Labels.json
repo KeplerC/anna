@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/CMakeFiles/zeromqcpp"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/CMakeFiles/zeromqcpp.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/CMakeFiles/zeromqcpp-complete.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-install.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-mkdir.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-download.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-update.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-patch.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-configure.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp-stamp/zeromqcpp-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"zeromqcpp"
+		],
+		"name" : "zeromqcpp"
+	}
+}

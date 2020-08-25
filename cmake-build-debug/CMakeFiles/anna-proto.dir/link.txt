@@ -1,0 +1,2 @@
+/usr/bin/ar qc libanna-proto.a  CMakeFiles/anna-proto.dir/anna.pb.cc.o CMakeFiles/anna-proto.dir/shared.pb.cc.o CMakeFiles/anna-proto.dir/metadata.pb.cc.o
+/usr/bin/ranlib libanna-proto.a

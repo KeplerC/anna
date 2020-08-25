@@ -1,0 +1,13 @@
+# Target labels
+ yamlcpp
+# Source files and their labels
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/CMakeFiles/yamlcpp
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/CMakeFiles/yamlcpp.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/CMakeFiles/yamlcpp-complete.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp-stamp/yamlcpp-install.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp-stamp/yamlcpp-mkdir.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp-stamp/yamlcpp-download.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp-stamp/yamlcpp-update.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp-stamp/yamlcpp-patch.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp-stamp/yamlcpp-configure.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp-stamp/yamlcpp-build.rule

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libhydro-zmq.a  CMakeFiles/hydro-zmq.dir/common/include/zmq/socket_cache.cpp.o CMakeFiles/hydro-zmq.dir/common/include/zmq/zmq_util.cpp.o
+/usr/bin/ranlib libhydro-zmq.a

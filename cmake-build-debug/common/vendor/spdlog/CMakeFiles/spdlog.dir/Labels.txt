@@ -1,0 +1,13 @@
+# Target labels
+ spdlog
+# Source files and their labels
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/CMakeFiles/spdlog
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/CMakeFiles/spdlog.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/CMakeFiles/spdlog-complete.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-install.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-mkdir.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-download.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-update.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-patch.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-configure.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-build.rule

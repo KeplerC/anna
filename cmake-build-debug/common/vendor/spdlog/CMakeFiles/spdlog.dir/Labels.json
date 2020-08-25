@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/CMakeFiles/spdlog"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/CMakeFiles/spdlog.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/CMakeFiles/spdlog-complete.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-install.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-mkdir.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-download.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-update.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-patch.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-configure.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog-stamp/spdlog-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"spdlog"
+		],
+		"name" : "spdlog"
+	}
+}

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libanna-hash-ring.a  CMakeFiles/anna-hash-ring.dir/hash_ring.cpp.o
+/usr/bin/ranlib libanna-hash-ring.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libanna-bench-proto.a  CMakeFiles/anna-bench-proto.dir/benchmark.pb.cc.o
+/usr/bin/ranlib libanna-bench-proto.a

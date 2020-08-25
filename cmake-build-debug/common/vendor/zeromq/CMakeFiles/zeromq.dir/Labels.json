@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/CMakeFiles/zeromq"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/CMakeFiles/zeromq.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/CMakeFiles/zeromq-complete.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-install.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-mkdir.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-download.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-update.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-patch.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-configure.rule"
+		},
+		{
+			"file" : "/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-build.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"zeromq"
+		],
+		"name" : "zeromq"
+	}
+}

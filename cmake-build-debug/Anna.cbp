@@ -1,0 +1,867 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="Anna"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\common\;CMake Files\common\cmake\;CMake Files\common\vendor\;CMake Files\common\vendor\spdlog\;CMake Files\common\vendor\yamlcpp\;CMake Files\common\vendor\zeromq\;CMake Files\common\vendor\zeromqcpp\;CMake Files\cmake-build-debug\;CMake Files\cmake-build-debug\common\;CMake Files\cmake-build-debug\common\vendor\;CMake Files\cmake-build-debug\common\vendor\spdlog\;CMake Files\cmake-build-debug\common\vendor\spdlog\spdlog-prefix\;CMake Files\cmake-build-debug\common\vendor\spdlog\spdlog-prefix\tmp\;CMake Files\cmake-build-debug\common\vendor\yamlcpp\;CMake Files\cmake-build-debug\common\vendor\yamlcpp\tmp\;CMake Files\cmake-build-debug\common\vendor\zeromq\;CMake Files\cmake-build-debug\common\vendor\zeromq\tmp\;CMake Files\cmake-build-debug\common\vendor\zeromqcpp\;CMake Files\cmake-build-debug\common\vendor\zeromqcpp\zeromqcpp-prefix\;CMake Files\cmake-build-debug\common\vendor\zeromqcpp\zeromqcpp-prefix\tmp\;CMake Files\src\;CMake Files\src\hash_ring\;CMake Files\src\kvs\;CMake Files\src\monitor\;CMake Files\src\route\;CMake Files\src\benchmark\;CMake Files\client\;CMake Files\client\cpp\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-proto">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/libanna-proto.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 anna-proto"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-proto/fast">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/libanna-proto.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 anna-proto/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-bench-proto">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/libanna-bench-proto.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 anna-bench-proto"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-bench-proto/fast">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/libanna-bench-proto.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 anna-bench-proto/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hydro-zmq">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/libhydro-zmq.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 hydro-zmq"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="hydro-zmq/fast">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/libhydro-zmq.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 hydro-zmq/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="clang-format">
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clang-format"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="spdlog">
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/Makefile&quot;  VERBOSE=1 spdlog"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="yamlcpp">
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/Makefile&quot;  VERBOSE=1 yamlcpp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="zeromq">
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/Makefile&quot;  VERBOSE=1 zeromq"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="zeromqcpp">
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/Makefile&quot;  VERBOSE=1 zeromqcpp"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-hash-ring">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring/libanna-hash-ring.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring/Makefile&quot;  VERBOSE=1 anna-hash-ring"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-hash-ring/fast">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring/libanna-hash-ring.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring/Makefile&quot;  VERBOSE=1 anna-hash-ring/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/hash_ring/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-kvs">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs/anna-kvs" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/kvs/Makefile&quot;  VERBOSE=1 anna-kvs"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/kvs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/kvs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/kvs/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-kvs/fast">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs/anna-kvs" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/kvs/Makefile&quot;  VERBOSE=1 anna-kvs/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/kvs/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/kvs/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/kvs/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-monitor">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs/anna-monitor" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/monitor/Makefile&quot;  VERBOSE=1 anna-monitor"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/monitor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/monitor/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/monitor/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-monitor/fast">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs/anna-monitor" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/monitor/Makefile&quot;  VERBOSE=1 anna-monitor/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/monitor/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/monitor/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/monitor/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-route">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs/anna-route" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/route/Makefile&quot;  VERBOSE=1 anna-route"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/route/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/route/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/route/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-route/fast">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs/anna-route" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/kvs"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/route/Makefile&quot;  VERBOSE=1 anna-route/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/route/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/route/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/route/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-bench-trigger">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/benchmark/anna-bench-trigger" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/benchmark"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 anna-bench-trigger"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-bench-trigger/fast">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/benchmark/anna-bench-trigger" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/benchmark"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 anna-bench-trigger/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-bench">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/benchmark/anna-bench" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/benchmark"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 anna-bench"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-bench/fast">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/benchmark/anna-bench" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/target/benchmark"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 anna-bench/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/src/benchmark/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-cli">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/cli/anna-cli" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/cli"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/client/cpp/Makefile&quot;  VERBOSE=1 anna-cli"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/client/cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/client/cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/client/cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="anna-cli/fast">
+				<Option output="/home/keplerc/Desktop/own/anna/cmake-build-debug/cli/anna-cli" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/keplerc/Desktop/own/anna/cmake-build-debug/cli"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/src/spdlog/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/src/zeromqcpp"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/src/yamlcpp/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/common/include"/>
+					<Add directory="/home/keplerc/Desktop/own/anna/include"/>
+					<Add directory="/usr/include/c++/9"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/9"/>
+					<Add directory="/usr/include/c++/9/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/9/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/client/cpp/Makefile&quot;  VERBOSE=1 anna-cli/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/client/cpp/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/client/cpp/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/home/keplerc/Desktop/own/anna/cmake-build-debug/client/cpp/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/keplerc/Desktop/own/anna/client/cpp/cli.cpp">
+			<Option target="anna-cli"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/anna.pb.cc">
+			<Option target="anna-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/anna.pb.h">
+			<Option target="anna-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/anna.pb.h.rule">
+			<Option target="anna-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/benchmark.pb.cc">
+			<Option target="anna-bench-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/benchmark.pb.h">
+			<Option target="anna-bench-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/benchmark.pb.h.rule">
+			<Option target="anna-bench-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/metadata.pb.cc">
+			<Option target="anna-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/metadata.pb.h">
+			<Option target="anna-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/metadata.pb.h.rule">
+			<Option target="anna-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/shared.pb.cc">
+			<Option target="anna-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/shared.pb.h">
+			<Option target="anna-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/shared.pb.h.rule">
+			<Option target="anna-proto"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/common/include/zmq/socket_cache.cpp">
+			<Option target="hydro-zmq"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/common/include/zmq/socket_cache.hpp">
+			<Option target="hydro-zmq"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/common/include/zmq/zmq_util.cpp">
+			<Option target="hydro-zmq"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/common/include/zmq/zmq_util.hpp">
+			<Option target="hydro-zmq"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/benchmark/benchmark.cpp">
+			<Option target="anna-bench"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/benchmark/trigger.cpp">
+			<Option target="anna-bench-trigger"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/hash_ring/hash_ring.cpp">
+			<Option target="anna-hash-ring"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/cache_ip_response_handler.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/gossip_handler.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/management_node_response_handler.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/node_depart_handler.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/node_join_handler.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/replication_change_handler.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/replication_response_handler.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/self_depart_handler.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/server.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/user_request_handler.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/utils.cpp">
+			<Option target="anna-kvs"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/depart_done_handler.cpp">
+			<Option target="anna-monitor"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/elasticity.cpp">
+			<Option target="anna-monitor"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/feedback_handler.cpp">
+			<Option target="anna-monitor"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/membership_handler.cpp">
+			<Option target="anna-monitor"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/monitoring.cpp">
+			<Option target="anna-monitor"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/movement_policy.cpp">
+			<Option target="anna-monitor"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/replication_helpers.cpp">
+			<Option target="anna-monitor"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/slo_policy.cpp">
+			<Option target="anna-monitor"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/stats_helpers.cpp">
+			<Option target="anna-monitor"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/storage_policy.cpp">
+			<Option target="anna-monitor"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/route/address_handler.cpp">
+			<Option target="anna-route"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/route/membership_handler.cpp">
+			<Option target="anna-route"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/route/replication_change_handler.cpp">
+			<Option target="anna-route"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/route/replication_response_handler.cpp">
+			<Option target="anna-route"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/route/routing.cpp">
+			<Option target="anna-route"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/route/seed_handler.cpp">
+			<Option target="anna-route"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/common/cmake/CodeCoverage.cmake">
+			<Option virtualFolder="CMake Files\common\cmake\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/common/cmake/clang-format.cmake">
+			<Option virtualFolder="CMake Files\common\cmake\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/common/vendor/spdlog/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\common\vendor\spdlog\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/common/vendor/yamlcpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\common\vendor\yamlcpp\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/common/vendor/zeromq/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\common\vendor\zeromq\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/common/vendor/zeromqcpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\common\vendor\zeromqcpp\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/spdlog/spdlog-prefix/tmp/spdlog-cfgcmd.txt.in">
+			<Option virtualFolder="CMake Files\cmake-build-debug\common\vendor\spdlog\spdlog-prefix\tmp\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/yamlcpp/tmp/yamlcpp-cfgcmd.txt.in">
+			<Option virtualFolder="CMake Files\cmake-build-debug\common\vendor\yamlcpp\tmp\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/tmp/zeromq-cfgcmd.txt.in">
+			<Option virtualFolder="CMake Files\cmake-build-debug\common\vendor\zeromq\tmp\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromqcpp/zeromqcpp-prefix/tmp/zeromqcpp-cfgcmd.txt.in">
+			<Option virtualFolder="CMake Files\cmake-build-debug\common\vendor\zeromqcpp\zeromqcpp-prefix\tmp\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/hash_ring/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\hash_ring\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/kvs/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\kvs\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/monitor/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\monitor\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/route/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\route\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/src/benchmark/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\src\benchmark\"/>
+		</Unit>
+		<Unit filename="/home/keplerc/Desktop/own/anna/client/cpp/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\client\cpp\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

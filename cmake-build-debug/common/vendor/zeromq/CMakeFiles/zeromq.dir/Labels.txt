@@ -1,0 +1,13 @@
+# Target labels
+ zeromq
+# Source files and their labels
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/CMakeFiles/zeromq
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/CMakeFiles/zeromq.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/CMakeFiles/zeromq-complete.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-install.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-mkdir.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-download.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-update.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-patch.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-configure.rule
+/home/keplerc/Desktop/own/anna/cmake-build-debug/common/vendor/zeromq/src/zeromq-stamp/zeromq-build.rule
